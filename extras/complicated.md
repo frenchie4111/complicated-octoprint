@@ -80,8 +80,8 @@ the Complicated iOS/Apple Watch app.
 
 Complicated is a simple app that lets you update your Apple Watch face complications with WebHooks. You can also use IFTTT and Zapier to update the WebHooks.
 
-![/assets/img/demo.png](Demo Apple Watch)
+![Demo Apple Watch](/assets/img/demo.png)
 
 https://mikelyons.org/complicated?utm_source=octoprint-complicated
 
-[![https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8](Download on App Store Link)](https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8)
+[![Complicated Download App](/assets/img/app_store.png)](https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8)
