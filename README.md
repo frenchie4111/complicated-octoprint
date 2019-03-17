@@ -14,7 +14,7 @@ or manually using this URL:
 
 ## Configuration
 
-![/assets/img/settings.png](Settings Menu)
+![Settings Menu](/assets/img/settings.png)
 
 Configuration steps:
 
@@ -28,11 +28,9 @@ Configuration steps:
 
 Complicated is a simple app that lets you update your Apple Watch face complications with WebHooks. You can also use IFTTT and Zapier to update the WebHooks.
 
-![/assets/img/demo.png](Demo Apple Watch)
-
 https://mikelyons.org/complicated?utm_source=octoprint-complicated
 
-[![https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8](Download on App Store Link)](https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8)
+[![Download on App Store Link](https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8)](https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8)
 
 ## Questions, Support, Feedback, Hello
 
