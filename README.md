@@ -3,6 +3,8 @@
 This plugin allows you to show your 3d print progress on your Apple Watch by integrating with
 the Complicated iOS/Apple Watch app.
 
+![Print progress on Watch](/assets/img/demo.png)
+
 ## Setup
 
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
