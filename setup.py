@@ -4,7 +4,7 @@
 ### Do not forget to adjust the following variables to your own plugin.
 
 # The plugin's identifier, has to be unique
-plugin_identifier = "complicated"
+plugin_identifier = "octoprint_complicated"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
 plugin_package = "octoprint_complicated"
@@ -33,7 +33,9 @@ plugin_url = "https://github.com/frenchie4111/complicated-octoprint"
 plugin_license = "AGPLv3"
 
 # Any additional requirements besides OctoPrint should be listed here
-plugin_requires = []
+plugin_requires = [
+	"complicated==1.0.0"
+]
 
 ### --------------------------------------------------------------------------------------------------------------------
 ### More advanced options that you usually shouldn't have to touch follow after this point
@@ -92,5 +94,7 @@ setup_parameters = octoprint_setuptools.create_plugin_setup_parameters(
 if len(additional_setup_parameters):
 	from octoprint.util import dict_merge
 	setup_parameters = dict_merge(setup_parameters, additional_setup_parameters)
+
+print( setup_parameters )
 
 setup(**setup_parameters)

@@ -8,42 +8,28 @@ author: Mike Lyons
 license: AGPLv3
 
 # TODO
-date: today's date in format YYYY-MM-DD, e.g. 2015-04-21
+date: 2019-03-17
 
 homepage: https://github.com/frenchie4111/complicated-octoprint
 source: https://github.com/frenchie4111/complicated-octoprint
 archive: https://github.com/frenchie4111/complicated-octoprint/archive/master.zip
 
 # TODO
-# Set this to true if your plugin uses the dependency_links setup parameter to include
-# library versions not yet published on PyPi. SHOULD ONLY BE USED IF THERE IS NO OTHER OPTION!
-#follow_dependency_links: false
-
-# TODO
 tags:
-- a list
-- of tags
-- that apply
-- to your plugin
-- (take a look at the existing plugins for what makes sense here)
+- apple watch
+- ios
+- progress
 
 # TODO
 screenshots:
-- url: url of a screenshot, /assets/img/...
-  alt: alt-text of a screenshot
-  caption: caption of a screenshot
-- url: url of another screenshot, /assets/img/...
-  alt: alt-text of another screenshot
-  caption: caption of another screenshot
-- ...
+- url: /assets/img/settings.png
+  alt: Complicated Settings
+  caption: Complicated Settings Menu
+- url: /assets/img/demo.png
+  alt: Watch Demo
+  caption: Print Progress on your Apple Watch
 
-# TODO
-featuredimage: url of a featured image for your plugin, /assets/img/...
-
-# TODO
-# You only need the following if your plugin requires specific OctoPrint versions or
-# specific operating systems to function - you can safely remove the whole
-# "compatibility" block if this is not the case.
+featuredimage: /assets/img/demo.png
 
 compatibility:
 
@@ -85,5 +71,17 @@ compatibility:
 
 ---
 
-**TODO**: Longer description of your plugin, configuration examples etc. This part will be visible on the page at
-http://plugins.octoprint.org/plugin/complicated/
+# OctoPrint Complicated Integration
+
+This plugin allows you to show your 3d print progress on your Apple Watch by integrating with
+the Complicated iOS/Apple Watch app.
+
+## What is Complicated?
+
+Complicated is a simple app that lets you update your Apple Watch face complications with WebHooks. You can also use IFTTT and Zapier to update the WebHooks.
+
+![/assets/img/demo.png](Demo Apple Watch)
+
+https://mikelyons.org/complicated?utm_source=octoprint-complicated
+
+[![https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8](Download on App Store Link)](https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8)
