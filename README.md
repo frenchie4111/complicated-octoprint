@@ -30,7 +30,7 @@ Complicated is a simple app that lets you update your Apple Watch face complicat
 
 https://mikelyons.org/complicated?utm_source=octoprint-complicated
 
-[![Download on App Store Link](https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8)](https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8)
+[![Complicated Download App](/assets/img/app_store.png)](https://itunes.apple.com/us/app/complicated/id1444561091?ls=1&mt=8)
 
 ## Questions, Support, Feedback, Hello
 
