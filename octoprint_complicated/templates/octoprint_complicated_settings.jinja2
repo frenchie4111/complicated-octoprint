@@ -9,14 +9,14 @@
 
         <label class="control-label">{{ _('API Key') }}</label>
         <div class="controls">
-            <input type="text" class="input-block-level" data-bind="value: settings.plugins.complicated.api_key">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.octoprint_complicated.api_key">
             <div class="help-block">You can get this value from the settings menu in the Complicated app after completing the setup wizard.</div>
         </div>
         <br/>
 
         <label class="control-label">{{ _('Complication Type') }}</label>
         <div class="controls">
-            <select class="input-block-level" data-bind="options: settings.plugins.complicated.selected_complication">
+            <select class="input-block-level" data-bind="value: settings.plugins.octoprint_complicated.selected_complication">
                 <option value="modularLarge">Modular Large</option>
                 <option value="modularSmall">Modular Small</option>
                 <option value="utilitarianSmall">Utility Small</option>
@@ -33,7 +33,7 @@
 
         <label class="control-label">{{ _('Update Text') }}</label>
         <div class="controls">
-            <input type="text" class="input-block-level" data-bind="value: settings.plugins.complicated.value_template">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.octoprint_complicated.value_template">
             <div class="help-block">The template for the update text. The string <code>{progress}</code> will be replaced with the current progress %.</div>
         </div>
     </div>
