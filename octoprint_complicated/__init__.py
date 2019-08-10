@@ -25,8 +25,8 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
             api_key="Put Your Api Key Here",
             selected_complication="modularLarge",
             value_template="Print {progress}% Completed",
-            notfiy_at_50_percent: False,
-            notfiy_at_100_percent: False
+            notfiy_at_50_percent=False,
+            notfiy_at_100_percent=False
         )
 
 
