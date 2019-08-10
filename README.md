@@ -1,5 +1,5 @@
 > # Note:
-> Unfortunetelly version 1.0.1 is broken, and does not allow updating. If you are
+> Unfortunately version 1.0.1 is broken, and does not allow updating. If you are
 > on version 1.0.1 please uninstall and re-install to get the latest version
 
 # OctoPrint-Complicated
