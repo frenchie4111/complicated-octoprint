@@ -36,5 +36,17 @@
             <input type="text" class="input-block-level" data-bind="value: settings.plugins.octoprint_complicated.value_template">
             <div class="help-block">The template for the update text. The string <code>{progress}</code> will be replaced with the current progress %.</div>
         </div>
+
+        <label class="control-label">{{ _('Send Notification at 50%') }}</label>
+        <div class="controls">
+            <input type="checkbox" class="input-block-level" data-bind="value: settings.plugins.octoprint_complicated.notfiy_at_50_percent">
+            <div class="help-block">Sends you a notification when print progress reaches 50%. (Requires Pro)</div>
+        </div>
+
+        <label class="control-label">{{ _('Send Notification at 100%') }}</label>
+        <div class="controls">
+            <input type="checkbox" class="input-block-level" data-bind="value: settings.plugins.octoprint_complicated.notfiy_at_100_percent">
+            <div class="help-block">Sends you a notification when print progress reaches 100%. (Requires Pro)</div>
+        </div>
     </div>
 </form>

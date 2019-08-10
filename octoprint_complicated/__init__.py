@@ -24,14 +24,16 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
         return dict(
             api_key="Put Your Api Key Here",
             selected_complication="modularLarge",
-            value_template="Print {progress}% Completed"
+            value_template="Print {progress}% Completed",
+            notfiy_at_50_percent: False,
+            notfiy_at_100_percent: False,
         )
 
 
     def get_settings_restricted_paths(self):
         return dict(
             admin=[ [ 'api_key' ] ],
-            user=[ [ 'selected_complication' ], [ 'value_template' ] ],
+            user=[ [ 'selected_complication' ], [ 'value_template' ], [ 'notfiy_at_50_percent' ], [ 'notfiy_at_100_percent' ] ],
             never=[]
         )
 
@@ -42,11 +44,17 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
             dict(
                 type="settings", 
                 name='Complicated Apple Watch', 
-                custom_bindings=False
+                custom_bindings=False,
+                notfiy_at_50_percent=False,
+                notfiy_at_100_percent=False
             )
         ]
 
     def on_print_progress( self, storage, path, progress ):
+        if self.progress < 50:
+            self.notified_at_50 = False
+            self.notified_at_100 = False
+
         self._logger.info( 'Updating server with progress {}'.format( progress ) )
 
         api_key = self._settings.get( [ 'api_key' ] )
@@ -66,7 +74,16 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
 
         new_value = value_template.replace( "{progress}", str( progress ) )
 
-        complicated_lib.changeComplication( api_key, selected_complciation, new_value )
+        alert = None
+        if progress >= 50 and not self.notified_at_50 and self._settings.get( [ 'notfiy_at_50_percent' ] ):
+            alert = "Print 50% Complete!"
+            self.notified_at_50 = True
+        
+        if progress >= 100 and not self.notified_at_100 and self._settings.get( [ 'notfiy_at_100_percent' ] ):
+            alert = "Print 100% Complete!"
+            self.notified_at_100 = True
+
+        complicated_lib.changeComplication( api_key, selected_complciation, new_value, alert=alert )
 
     def get_update_information(self, *args, **kwargs):
         return {
@@ -86,7 +103,7 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
 # can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
 
 __plugin_name__ = 'Complicated Plugin'
-__plugin_version__ = '1.0.0'
+__plugin_version__ = '1.1.0'
 __plugin_implementation__ = ComplicatedPlugin()
 __plugin_hooks__ = {
     "octoprint.plugin.softwareupdate.check_config": __plugin_implementation__.get_update_information
