@@ -95,7 +95,7 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
                 'current': self._plugin_version,
                 'user': 'frenchie4111',
                 'repo': 'complicated-octoprint',
-                'pip': 'https://github.com/frenchie41111/complicated-octoprint/archive/{target}.zip',
+                'pip': 'https://github.com/frenchie4111/complicated-octoprint/archive/{target}.zip',
             }
         }
 
