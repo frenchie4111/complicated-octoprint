@@ -26,7 +26,7 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
             selected_complication="modularLarge",
             value_template="Print {progress}% Completed",
             notfiy_at_50_percent: False,
-            notfiy_at_100_percent: False,
+            notfiy_at_100_percent: False
         )
 
 
@@ -103,7 +103,7 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
 # can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
 
 __plugin_name__ = 'Complicated Plugin'
-__plugin_version__ = '1.1.0'
+__plugin_version__ = '1.1.1'
 __plugin_implementation__ = ComplicatedPlugin()
 __plugin_hooks__ = {
     "octoprint.plugin.softwareupdate.check_config": __plugin_implementation__.get_update_information
