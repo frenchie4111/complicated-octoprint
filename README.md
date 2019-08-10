@@ -1,3 +1,7 @@
+> # Note:
+> Unfortunetelly version 1.0.1 is broken, and does not allow updating. If you are
+> on version 1.0.1 please uninstall and re-install to get the latest version
+
 # OctoPrint-Complicated
 
 This plugin allows you to show your 3d print progress on your Apple Watch by integrating with

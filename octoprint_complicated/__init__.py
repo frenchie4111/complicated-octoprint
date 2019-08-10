@@ -104,7 +104,7 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
 # can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
 
 __plugin_name__ = 'Complicated Plugin'
-__plugin_version__ = '1.1.2'
+__plugin_version__ = '1.1.3'
 __plugin_implementation__ = ComplicatedPlugin()
 __plugin_hooks__ = {
     "octoprint.plugin.softwareupdate.check_config": __plugin_implementation__.get_update_information
