@@ -25,8 +25,8 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
             api_key="Put Your Api Key Here",
             selected_complication="modularLarge",
             value_template="Print {progress}% Completed",
-            notfiy_at_50_percent=False,
-            notfiy_at_100_percent=False
+            notfiy_at_50_percent='No',
+            notfiy_at_100_percent='No'
         )
 
 
@@ -44,14 +44,12 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
             dict(
                 type="settings", 
                 name='Complicated Apple Watch', 
-                custom_bindings=False,
-                notfiy_at_50_percent=False,
-                notfiy_at_100_percent=False
+                custom_bindings=False
             )
         ]
 
     def on_print_progress( self, storage, path, progress ):
-        if self.progress < 50:
+        if progress < 50:
             self.notified_at_50 = False
             self.notified_at_100 = False
 
@@ -74,12 +72,15 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
 
         new_value = value_template.replace( "{progress}", str( progress ) )
 
+        self._logger.info( 'settings notify' )
+        self._logger.info( self._settings.get( [ 'notfiy_at_50_percent' ] ) )
+
         alert = None
-        if progress >= 50 and not self.notified_at_50 and self._settings.get( [ 'notfiy_at_50_percent' ] ):
+        if progress >= 50 and not self.notified_at_50 and self._settings.get( [ 'notfiy_at_50_percent' ] ) == 'Yes':
             alert = "Print 50% Complete!"
             self.notified_at_50 = True
-        
-        if progress >= 100 and not self.notified_at_100 and self._settings.get( [ 'notfiy_at_100_percent' ] ):
+
+        if progress >= 100 and not self.notified_at_100 and self._settings.get( [ 'notfiy_at_100_percent' ] ) == 'Yes':
             alert = "Print 100% Complete!"
             self.notified_at_100 = True
 
@@ -103,7 +104,7 @@ class ComplicatedPlugin( octoprint.plugin.ProgressPlugin, octoprint.plugin.Setti
 # can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
 
 __plugin_name__ = 'Complicated Plugin'
-__plugin_version__ = '1.1.1'
+__plugin_version__ = '1.1.2'
 __plugin_implementation__ = ComplicatedPlugin()
 __plugin_hooks__ = {
     "octoprint.plugin.softwareupdate.check_config": __plugin_implementation__.get_update_information
